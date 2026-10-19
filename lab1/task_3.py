@@ -7,7 +7,7 @@ k = (money - temp) // 10
 temp += k*10 
 l = (money - temp) // 5
 temp += l*5
-m = (money - temp) // 2
+m = (money - temp) // 2 
 temp += m*2
 n = (money - temp)
 print("могу разменять на", i, "по сто,", j, "по пятьдесят,", k, 
