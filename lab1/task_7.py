@@ -21,4 +21,4 @@ if messages > 30:
 
 print("налог: 2%")
 payment = round(payment * tax, 2)
-print(f"итоговый тариф: {payment}")
+print(f"итоговая сумма: {payment}")
