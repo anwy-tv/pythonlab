@@ -15,17 +15,17 @@ def word_analyzer(words):
     for word in words:
         if count[word] > count[top_word]:
             top_word = word
-    print("Самое частое слово", top_word)
+    print("Самое часто встречающееся слово: ", top_word)
 
-    shorty = words[0]
+    shortest = words[0]
     long = words[0]
     for word in words:
-        if len(word) < len(shorty):
-            shorty = word
+        if len(word) < len(shortest):
+            shortest = word
         if len(word) > len(long):
             long = word
-    print("Самое короткое слово", shorty)
-    print("Самое длинное слово", long)
+    print("Самое короткое слово -", shortest)
+    print("Самое длинное слово -", long)
 
 text = input("Введите текст: ")
 
