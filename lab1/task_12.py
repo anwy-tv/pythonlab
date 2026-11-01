@@ -3,20 +3,23 @@ def word_analyzer(words):
     if len(words) == 0:
         print("слов нет")
     else: print("всего", len(words),"слов(-а)")
+
     count = {}
     for word in words:
         if word in count:
             count[word] += 1 
         else: count[word] = 1
+
     print("частота слов:")
-    for word in words:
+    for word in count:
         print(word, "-", count[word])
+
     top_word = words[0]
     for word in words:
         if count[word] > count[top_word]:
             top_word = word
     print("Самое часто встречающееся слово: ", top_word)
-
+ # сделать так, чтобы выводились все слова c наибольшей частотой
     shortest = words[0]
     long = words[0]
     for word in words:
