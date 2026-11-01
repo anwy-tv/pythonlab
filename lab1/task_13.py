@@ -1,9 +1,9 @@
-numbers = input("enter your numbers")
+numbers = input("enter your numbers: ")
 num = list(map(float, numbers.split()))
-print(num)
+print("все числа: ", num)
 
 unique = list(set(num))
-print(unique)
+print("уникальные числа:", unique)
 
 even = []
 not_even = []
@@ -21,10 +21,11 @@ for number in num:
         floated.append(number)
     if number % 5 == 0:
         five += number
-print(even)
-print(not_even)
-print(negative)
-print(floated)
-print(five)
-print(min(num))
-print(max(num))
+
+print("четные: ", even)
+print("нечетные: ", not_even)
+print("отрицательные: ", negative)
+print("числа с плавающей точкой: ", floated)
+print("сумма всех чисел, кратных пяти: ", five)
+print("самое маленькое число: ", min(num))
+print("самое большое число: ", max(num))
