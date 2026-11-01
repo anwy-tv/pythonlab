@@ -1,9 +1,9 @@
 sales = [
-    {"name": "latte", "price": 100, "quantity": 5},
-    {"name": "cappuccino", "price": 100, "quantity": 12},
-    {"name": "raf", "price": 100, "quantity": 8},
-    {"name": "americano", "price": 100, "quantity": 13},
-    {"name": "cheesecake", "price": 100, "quantity": 19},
+    {"name": "латте", "price": 8, "quantity": 50},
+    {"name": "капучино", "price": 8, "quantity": 60},
+    {"name": "раф", "price": 10, "quantity": 25},
+    {"name": "американо", "price": 5, "quantity": 20},
+    {"name": "чизкейк", "price": 9, "quantity": 20},
 ]
 print("Уникальных наименований:", len(sales))
 revenue = {}
