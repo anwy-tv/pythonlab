@@ -21,9 +21,8 @@ def total(items):
     return result
 
 
-# рекомендуемая доля дохода на каждую категорию
 norms = {"жилье": 75, "питание": 10, "транспорт": 6, "развлечения": 3}
-saving_norm = 6 # на сбережения  
+saving_norm = 6
 
 print("личный финансовый помощник")
 incomes = read_items("введите доходы за месяц")
@@ -57,7 +56,7 @@ else:
     print(f"доля дохода, которая остается: {savings_percent:.1f}%")
 
     print("\nрекомендации по расходам")
-    can_save = 0  # сколько можно сэкономить, если уложиться в нормы
+    can_save = 0 
     problems = False
 
     if balance < 0:
@@ -95,7 +94,7 @@ else:
 
     current_savings = float(input("\nсколько у вас сейчас накоплено? - "))
     if expense_sum > 0:
-        reserve = expense_sum * 3  # финансовая подушка на 3 месяца
+        reserve = expense_sum * 3  
         months_covered = current_savings / expense_sum
         print(f"накоплений хватит на {months_covered:.1f} мес. расходов")
         if current_savings >= reserve:
