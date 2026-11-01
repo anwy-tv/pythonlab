@@ -21,9 +21,9 @@ def add(a, b):
 def hello(name, greeting="привет"):
     return f"{greeting}, {name}"
 
-
+ 
 print("add(2, 3) =", add(2, 3))
-print("hello:", hello("аня", greeting="доброе утро"))
+print("hello:", hello("Ирина Николаевна", greeting="добрый вечер"))
 
 print("содержимое файла calls.txt:")
 with open("calls.txt", encoding="utf-8") as file:

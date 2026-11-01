@@ -24,7 +24,7 @@ dict_b = {"d": 1, "b": {"c": 2, "e": 3}}
 print("первый словарь:", dict_a)
 print("второй словарь:", dict_b)
 merge_dicts(dict_a, dict_b)
-print("первый словарь после слияния:", dict_a)
+print("первый словарь после слияния: ", dict_a)
 
 x = {"list": [1, 2], "set": {1, 2}, "tuple": (1, 2), "inner": {"k": [1]}}
 y = {"list": [2, 3], "set": {2, 3}, "tuple": (2, 3), "inner": {"k": [5], "m": 1}}
