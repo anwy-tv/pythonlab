@@ -1,0 +1,10 @@
+01.11.2026 22:34:47 | add | args: (2, 3) | kwargs: {}
+01.11.2026 22:34:47 | hello | args: ('аня',) | kwargs: {'greeting': 'доброе утро <3'}
+01.11.2026 22:36:18 | add | args: (2, 3) | kwargs: {}
+01.11.2026 22:36:18 | hello | args: ('аня',) | kwargs: {'greeting': 'доброе утро'}
+01.11.2026 22:37:04 | add | args: (2, 3) | kwargs: {}
+01.11.2026 22:37:04 | hello | args: ('аня',) | kwargs: {'greeting': 'доброе утро'}
+01.11.2026 22:37:18 | add | args: (2, 3) | kwargs: {}
+01.11.2026 22:37:18 | hello | args: ('аня',) | kwargs: {'greeting': 'доброе утро'}
+01.11.2026 22:38:05 | add | args: (2, 3) | kwargs: {}
+01.11.2026 22:38:05 | hello | args: ('аня',) | kwargs: {'greeting': 'доброе утро'}
