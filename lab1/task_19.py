@@ -3,9 +3,9 @@ def cache(func):
 
     def wrapper(*args):
         if args in saved:
-            print("берем результат из кэша для", args)
+            print("берем результат из кэша для", *args)
             return saved[args]
-        print("считаем заново для", args)
+        print("считаем заново для", *args)
         result = func(*args)
         saved[args] = result
         return result
