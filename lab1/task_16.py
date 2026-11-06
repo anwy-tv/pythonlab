@@ -11,4 +11,4 @@ def flatten_list(lst):
 list_a = [1, 2, 3, [4], 5, [6, [7, [], 8, [9]]]]
 print("исходный список:", list_a)
 flatten_list(list_a)
-print("список после применения функции:", list_a)
+print("список после модификации:", list_a)
