@@ -16,7 +16,6 @@ def cache(func):
 def square(n):
     return n * n
 
-
 print("первый вызов square(5):", square(5))
 print("второй вызов square(5):", square(5))
 print("вызов square(7):", square(7))

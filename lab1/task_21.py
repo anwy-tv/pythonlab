@@ -24,5 +24,5 @@ def pause():
     time.sleep(0.2)
 
 
-print("сумма чисел:", sum_numbers(44400))
+print("сумма чисел:", sum_numbers(100))
 pause()

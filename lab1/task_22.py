@@ -20,3 +20,4 @@ try:
     print("50 + 2 =", add(50, 2))
 except TypeError as e:
     print("ошибка:", e)
+
