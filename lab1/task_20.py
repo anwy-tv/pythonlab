@@ -9,6 +9,6 @@ def unique_elements(lst, result=None):
     return result
 
 
-list_a = [11, 6, 7, [1, 0, 12], 7, [19, [19, [1], 3, [4, 14, 2]]]]
+list_a = [11, 6, 7, [1, 0, 1], 7, [19, [19, [1], 3, [4, 14, 7]]]]
 print("исходный список:", list_a)
 print("уникальные элементы:", unique_elements(list_a))
