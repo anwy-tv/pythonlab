@@ -47,9 +47,9 @@ curriculum = {
         }
 }
 class Discipline:
-    def __init__(self, name, term):
+    def __init__(self, name, semester):
         self.name = name
-        self.term = term
+        self.semester = semester
 
 class Department:
     def __init__(self, name):
@@ -68,7 +68,7 @@ class Student:
         self.student_id = student_id
         self.name = name
         self.specialty = specialty
-        self.term = 1
+        self.semester = 1
         self.major_disciplines = {}
 
 class Faculty:
@@ -76,11 +76,49 @@ class Faculty:
         self.name = name
         self.specialties = {}
         self.students = {}
-        self.next_id = 1
+        self.next_id = 2521000
         self.departments = {}
-        
 
     def add_specialty(self, name):
         self.specialties[name] = Specialty(name)
+# enroll_student remake
+    def enroll_student(self, name, specialty_name):
+        if specialty_name == self.specialties:
+            specialty = self.specialties[specialty_name]
+            self.next_id = name.student_id
+            Student(self.next_id, name, specialty)
+            self.next_id += 1
+            self.students[student_id] = student
+        return student_id
 
-        
+    def expel_student(self, student_id):
+        self.get_student(student_id)
+        del self.students[student_id]
+
+    def add_discipline_to_student(self, student_id, discipline_name):
+        self.get_student(student_id)
+        if discipline_name in student.major_disciplines:
+            AlreadyEnrolledError()
+        else:
+           if self.check_discipline_available(student, discipline_name) == True:
+               student.major_disciplines[discipline_name] = None
+            else:
+               DisciplineNotAvailableError
+
+    def remove_discipline_from_student(self, student_id, discipline_name):
+        self.get_student(student_id)
+        if discipline_name not in student.major_disciplines:
+            NotEnrolledError
+        else:
+            del student.major_disciplines(discipline_name)
+
+    def set_grade(self, student_id, discipline_name, grade):
+               
+
+    def get_student(self, student_id):
+        if student_id[self.students]:
+            return Student.self
+       # else StudentFoundError()
+
+    def check_discipline_available(self, student, discipline_name):
+    
