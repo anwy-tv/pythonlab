@@ -1,0 +1,6 @@
+,Age,Current_semester,CGPA,Cost_without_study,Depression_flag
+Age,1.0,0.325,-0.065,-0.063,-0.034
+Current_semester,0.325,1.0,-0.008,0.014,-0.018
+CGPA,-0.065,-0.008,1.0,0.082,-0.096
+Cost_without_study,-0.063,0.014,0.082,1.0,0.018
+Depression_flag,-0.034,-0.018,-0.096,0.018,1.0
