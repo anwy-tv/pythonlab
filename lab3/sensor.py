@@ -1,7 +1,4 @@
 """
-Лабораторная работа №3, задание 3.
-Аналитика работы датчика температуры в теплице (SciPy).
-
 1. scipy.interpolate  - восстановление температуры на каждый час;
 2. scipy.optimize     - поиск максимума и минимума (minimize_scalar);
 3. scipy.integrate    - средняя температура за сутки (quad);
@@ -15,17 +12,13 @@ from scipy.interpolate import CubicSpline
 from scipy.optimize import minimize_scalar, root_scalar
 from scipy.integrate import quad
 
-# ----------------------------- ВХОДНЫЕ ДАННЫЕ -------------------------
-# Датчик температуры воздуха в теплице с томатами. Система климат-контроля
-# давала сбои, поэтому в записи есть пропуски:
-#   03:30 - 06:00 (ночь) и 11:00 - 15:00 (самое жаркое время).
-# Время - часы от начала суток (дробная часть = минуты), температура - °C.
+#ВХОДНЫЕ ДАННЫЕ
 TIMES = np.array([0.0, 1.0, 2.0, 3.5, 6.0, 7.0, 8.5, 10.0, 11.0,
                   15.0, 16.0, 17.5, 19.0, 20.0, 22.0, 23.5])
 TEMPS = np.array([17.4, 16.9, 16.4, 15.8, 15.6, 16.9, 19.2, 22.8, 24.6,
                   27.1, 26.3, 24.2, 21.5, 20.1, 18.6, 17.8])
 
-NORM = 22.0          # оптимальная температура не выше, °C
+NORM = 22.0          # оптимальная температура не выше
 DAY_START, DAY_END = 0.0, 24.0
 
 OUT_PLOT = "temperature.png"
@@ -39,8 +32,7 @@ def fmt_time(hours: float) -> str:
     return f"{total_min // 60 % 24:02d}:{total_min % 60:02d}"
 
 
-# ------------------------- 1. ИНТЕРПОЛЯЦИЯ ---------------------------
-# Кубический сплайн даёт гладкую кривую, проходящую через все измерения.
+# ИНТЕРПОЛЯЦИЯ
 spline = CubicSpline(TIMES, TEMPS)
 
 
@@ -48,12 +40,10 @@ def temp(t):
     return spline(t)
 
 
-hours = np.arange(DAY_START, DAY_END + 1)          # 0, 1, ..., 24
+hours = np.arange(DAY_START, DAY_END + 1)
 hourly = temp(hours)
 
-# --------------------- 2. МАКСИМУМ И МИНИМУМ -------------------------
-# Грубая сетка находит окрестность экстремума, затем minimize_scalar
-# уточняет его в пределах +-1 часа (метод bounded).
+# МАКСИМУМ И МИНИМУМ
 grid = np.linspace(DAY_START, DAY_END, 2401)
 vals = temp(grid)
 
@@ -70,13 +60,10 @@ def refine(guess: float, sign: float):
 t_min, T_min = refine(grid[vals.argmin()], +1)
 t_max, T_max = refine(grid[vals.argmax()], -1)
 
-# ------------------ 3. СРЕДНЯЯ ТЕМПЕРАТУРА ЗА ДЕНЬ -------------------
-# Среднее значение функции = интеграл / длина интервала.
+# СРЕДНЯЯ ТЕМПЕРАТУРА ЗА ДЕНЬ
 integral, _err = quad(lambda t: float(temp(t)), DAY_START, DAY_END)
 mean_temp = integral / (DAY_END - DAY_START)
 
-# ---------------- 4. ПЕРЕСЕЧЕНИЯ ОТМЕТКИ 22 °C ------------------------
-# Ищем смену знака f(t) - NORM на сетке и уточняем корень методом brentq.
 def f(t):
     return float(temp(t)) - NORM
 
@@ -94,9 +81,6 @@ edges = [DAY_START] + [c[0] for c in crossings] + [DAY_END]
 for a, b in zip(edges[:-1], edges[1:]):
     if f((a + b) / 2) > 0:
         above += b - a
-
-# ------------------------------ ОТЧЁТ -------------------------------
-
 
 def build_report() -> str:
     lines = [
@@ -122,10 +106,6 @@ def build_report() -> str:
     else:
         lines.append("Отметка нормы не пересекалась.")
     return "\n".join(lines)
-
-
-# ------------------------------ ГРАФИК -------------------------------
-
 
 def plot() -> None:
     fig, ax = plt.subplots(figsize=(11, 6))
