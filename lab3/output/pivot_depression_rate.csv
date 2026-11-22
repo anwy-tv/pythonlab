@@ -1,0 +1,5 @@
+Health_condition,Lower Middle class,Middle class,Rich class
+Good,0.0,0.0,0.0
+Normal,5.0,5.1,2.4
+Abnormal,72.2,57.3,7.3
+Critical,100.0,100.0,100.0

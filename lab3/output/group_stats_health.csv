@@ -1,0 +1,5 @@
+Health_condition,count,mean_CGPA,median_CGPA,depression_rate
+Critical,634,3.39,3.45,1.0
+Abnormal,881,3.387,3.47,0.549
+Normal,1787,3.426,3.5,0.046
+Good,1162,3.424,3.5,0.0
